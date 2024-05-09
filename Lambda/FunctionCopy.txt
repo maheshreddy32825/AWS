@@ -1,0 +1,21 @@
+
+# This is a Node JS code this get run when a event get triggered Lambda function code
+# when every a new oject placed on source S3 bucket event trigger lambda function and copy to destination S3 bucket
+
+var AWS = require("aws-sdk");
+
+exports.handler (event, context, callback) => {
+    var s3 new AWS.S3();
+    var sourceBucket = "Replace with sourcebucket name";
+    var destinationBucket = "Replace with destinationbucket name";
+    var objectKey = event. Records[0].s3.object.key;
+    var copySource = encodeURI (source Bucket + "/" + objectKey);
+    var copyParams = { Bucket: destinationBucket, CopySource: copySource, Key: objectKey };
+    s3.copyObject (copyParams, function(err, data) {
+        if (err) {
+            console.log(err, err.stack);
+        } else {
+            console.log("$3 object copy successful.");
+        } 
+    });
+};
