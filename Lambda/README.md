@@ -19,19 +19,33 @@ create
 ```
 under Role create a role
 select lambda service
-assign the above created policy
+assign the above created policy, AWSLambdaBasicExecutionRole and AWSLambda_FullAccess(cloudwatch log access)
 create 
 ```
 
 ## 3. Create Lambda Function
 ```
 Go to lambda
-create a function
-paste code Lambda/FunctionCopy.txt
+create a function with runtime as PYTHON
+under permissions assign Role created above
 create
+under test tab create a sample test and run to verify if lambda is working as expected
+Under code replace code with Lambda/FunctionCopy.txt
+add the destination bucket name and save
+Hit deploy
+```
+## 4. Add trigger
+```
+select the lambda function
+Add the trigger
+source: s3
+Bucket: yoursourcebucketname
+select the check box
+click on add
+
 ```
 
-## 4. Test
+## 5. Test
 ```
-upload files on source S3 bucket event trigger lambda and copys the objects to destination s3
+upload objects (upload files make sure no space in the filenames) on source S3 bucket event trigger lambda and copys the objects to destination s3
 ```
