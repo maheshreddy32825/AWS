@@ -11,7 +11,7 @@
 . Login to AWS console
 . Go to IAM
 . Create policy
-. Paste code from Lambda/S3CopyLambdaPolicy.txt
+. Paste code from Lambda/S3CopyLambdaPolicy.json
 . Create
 
 ```
@@ -30,7 +30,7 @@
 . Under permissions assign Role created above
 . Create
 . Under test tab create a sample test and run to verify if lambda is working as expected
-. Under code replace code with Lambda/FunctionCopy.txt
+. Under code replace code with Lambda/FunctionCopy.py
 . Add the destination bucket name and save
 . Hit deploy
 ```
