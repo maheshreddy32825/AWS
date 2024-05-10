@@ -2,9 +2,9 @@
 
 ## 0. Create S3 Bucket ##
 ```
-Login to AWS console
-Go to S3
-create two S3 buckets source and destination
+. Login to AWS console
+. Go to S3
+. create two S3 buckets source and destination
 ```
 ## 1. Create policy ##
 ```
